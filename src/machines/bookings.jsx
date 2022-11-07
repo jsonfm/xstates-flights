@@ -1,9 +1,13 @@
-import { createMachine } from "xstate";
+import { createMachine, assign } from "xstate";
 
 
 export const BookingMachine = createMachine({
     id: 'buy plane tickets',
     initial: 'initial',
+    context: {
+      passengers: [],
+      country: '',
+    },
     states: {
       initial: {
         on: {
@@ -12,14 +16,23 @@ export const BookingMachine = createMachine({
       },
       search: {
         on: {
-          CONTIUNE: 'passengers',
+          CONTINUE: {
+            target: 'passengers',
+            actions: assign({
+              country: (context, event) => event.country
+            })
+          },
           CANCEL: 'initial'
         }
       },
       passengers: {
         on: {
           DONE: 'tickets',
-          CANCEL: 'initial'
+          CANCEL: 'initial',
+          ADD: {
+            target: 'passengers',
+            actions: assign((context, event) => context.passengers.push(event.newPassenger))
+          }
         }
       },
       tickets: {

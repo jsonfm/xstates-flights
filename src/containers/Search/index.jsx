@@ -5,7 +5,7 @@ export const Search = ({ send }) => {
     const options = ['Mexico', 'Venezuela', 'Colombia', 'Ecuador'];
 
     const handleChange = (e) => setFlight(e.target.value);
-    const goToPassengers = () => send('CONTINUE');
+    const goToPassengers = () => {send('CONTINUE', { country: flight })};
 
     return(
         <div class="search-container flex flex-column">

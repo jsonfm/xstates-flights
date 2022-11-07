@@ -5,7 +5,7 @@ export const Welcome = ({ send }) => {
 
     return(
         <div>
-            <h3 className="mb-4">¡Hoy es el día!</h3>
+            <h3 className="mt-4 mb-4">¡Hoy es el día!</h3>
             <p className="mb-4">
                 Compra tu vuelo y conoce un nuevo rincón del mundo, te va a sorprender las maravillas que hay para explorar.
             </p>

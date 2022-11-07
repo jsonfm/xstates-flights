@@ -15,6 +15,13 @@ html, body {
   background-size: cover;
 }
 
+input {
+  border: none;
+  outline: none;
+  min-height: 2.5rem;
+  padding: 0 .5rem;
+}
+
 select {
   outline: none;
   min-height: 40px;
@@ -34,6 +41,18 @@ select {
 
 .flex-column {
   flex-direction: column;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.gap-2 {
+  gap: .5rem;
+}
+
+.gap-4 {
+  gap: 1rem;
 }
 /* margins */
 .mt-2 {
@@ -83,4 +102,10 @@ select {
 
 .mt-4 {
   margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+  .card {
+    min-width: 500px;
+  }
 }

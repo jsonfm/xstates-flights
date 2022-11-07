@@ -16,7 +16,7 @@ export const StepsLayout = ({ state, send }) => {
     }
 
     return(
-        <div className="centered-container">
+        <div>
             {render()}
         </div>
     )

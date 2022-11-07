@@ -4,12 +4,12 @@ export const Welcome = ({ send }) => {
     }
 
     return(
-        <div className="card">
-            <h3>¡Hoy es el día!</h3>
-            <p>
+        <div>
+            <h3 className="mb-4">¡Hoy es el día!</h3>
+            <p className="mb-4">
                 Compra tu vuelo y conoce un nuevo rincón del mundo, te va a sorprender las maravillas que hay para explorar.
             </p>
-            <button className="btn" onClick={startBooking}>
+            <button className="btn mt-4" onClick={startBooking}>
                 Comenzar
             </button>
         </div>

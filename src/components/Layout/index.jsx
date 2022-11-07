@@ -1,6 +1,7 @@
+import "./styles.css";
+
 export const Layout = ({children}) => {
-    
     return(
-        <div>{children}</div>
+        <div className="centered-container flex-column">{children}</div>
     )
 }

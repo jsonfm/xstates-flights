@@ -1,0 +1,27 @@
+.search-input {
+    width: 100%;
+}
+
+.passenger-container {
+    align-items: center;
+}
+
+.passenger-container svg {
+    cursor: pointer;
+    margin: .25rem 0;
+}
+.passenger-container svg:hover {
+    transform: scale(1.05);
+}
+
+.passenger-name {
+    border-bottom: 2px solid;
+    min-width: 200px;
+}
+
+.country {
+    /* border-bottom: 4px solid var(--primary); */
+    color: var(--danger);
+    font-weight: bold;
+    font-size: 1.2rem;
+}

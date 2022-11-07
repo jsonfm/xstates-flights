@@ -1,5 +1,9 @@
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  --primary: #414471;
+  --secondary: #5E6C8C;
+  --danger: #B63A3F;
+  --dark: rgb(60, 60, 60);
 }
 
 * {
@@ -24,8 +28,10 @@ input {
 
 select {
   outline: none;
+  border: none;
   min-height: 40px;
   cursor: pointer;
+  padding: 0 .5rem;
 }
 
 .centered-container {
@@ -43,8 +49,16 @@ select {
   flex-direction: column;
 }
 
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
 .space-between {
   justify-content: space-between;
+}
+
+.items-center {
+  align-items: center;
 }
 
 .gap-2 {
@@ -54,6 +68,7 @@ select {
 .gap-4 {
   gap: 1rem;
 }
+
 /* margins */
 .mt-2 {
   margin-top: .5rem;
@@ -75,11 +90,29 @@ select {
   margin-bottom: 1rem;
 }
 
+.mx-auto {
+  margin: 0 auto;
+}
+
+.mr-auto {
+  margin-right: auto;
+}
+
+.mr-left {
+  margin-left: auto;
+}
+
+/* text */
+.text-dark {
+  color: var(--dark);
+}
+
+
 /* buttons */
 .btn {
   border: none;
   outline: none;
-  padding: 1rem .5rem;
+  padding: .75rem 1rem;
   min-width: 80px;
   cursor: pointer;
   max-width: 200px;
@@ -89,15 +122,32 @@ select {
   transform: scale(1.05);
 }
 
+.btn-primary {
+  background: var(--primary);
+  color: white;
+}
+
+.btn-secondary{
+  background: var(--secondary);
+  color: white;
+}
+
+.btn-danger{
+  background: var(--danger);
+  color: white;
+}
+
+/* card */
 .card {
   min-height: 200px;
   min-width: 300px;
   max-width: 500px;
-  background: rgba(255, 255, 255, .5);
+  background: rgba(255, 255, 255, .6);
   color: black;
   padding: 1rem;
   display: flex;
   flex-direction: column;
+  backdrop-filter: blur(10px);
 }
 
 .mt-4 {

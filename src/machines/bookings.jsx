@@ -32,6 +32,15 @@ export const BookingMachine = createMachine({
           ADD: {
             target: 'passengers',
             actions: assign((context, event) => context.passengers.push(event.newPassenger))
+          },
+          DELETE: {
+            target: 'passengers',
+            actions: assign((context, event) => {
+              const { value } = event;
+              console.log("value: ", value);
+              const index = context.passengers.findIndex(passenger => passenger.toLowerCase() === value.toLowerCase());
+              context.passengers.splice(index, 1);
+            })
           }
         }
       },

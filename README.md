@@ -22,11 +22,13 @@ npm run dev
 ```
 
 ### Build
+Vite's build is executed like this:
 ```
 npm run build
 ```
 
 ### 📦 Deploy
+This projects uses gh-pages dependency, and includes a deploy script which builds and publish the app automatically on Github pages service. You need run the following command:
 ```
 npm run deploy
 ```

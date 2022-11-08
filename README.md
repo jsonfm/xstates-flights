@@ -28,7 +28,7 @@ npm run build
 ```
 
 ### 📦 Deploy
-This projects uses gh-pages dependency, and includes a deploy script which builds and publish the app automatically on Github pages service. You need run the following command:
+This projects uses gh-pages dependency, and includes a deploy script which builds and publishes the app automatically on Github pages service. You need run the following command:
 ```
 npm run deploy
 ```

@@ -6,8 +6,8 @@ export const Nav = ({ state, send}) => {
 
     return (
         <nav className="nav">
-            <h2 className="logo"><b>Book</b>Fly ✈️</h2>
-            {!state.matches('initial') &&
+            <h2 className="logo"><b>Booking </b>flight ✈️</h2>
+            {(!state.matches('initial') && !state.matches('tickets')) &&
                 <button className="btn btn-danger" onClick={cancel}>
                     Cancelar
                 </button>            

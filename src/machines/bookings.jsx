@@ -1,7 +1,8 @@
 import { createMachine, assign } from "xstate";
 
 
-export const BookingMachine = createMachine({
+export const BookingMachine = createMachine(
+  {
     id: 'buy plane tickets',
     initial: 'initial',
     context: {
@@ -27,8 +28,14 @@ export const BookingMachine = createMachine({
       },
       passengers: {
         on: {
-          DONE: 'tickets',
-          CANCEL: 'initial',
+          DONE: {
+            target: 'tickets',
+            cond: 'moreThanOnePassenger'
+          },
+          CANCEL: {
+            target: 'initial',
+            actions: 'cleanContext'
+          },
           ADD: {
             target: 'passengers',
             actions: assign((context, event) => context.passengers.push(event.newPassenger))
@@ -37,7 +44,6 @@ export const BookingMachine = createMachine({
             target: 'passengers',
             actions: assign((context, event) => {
               const { value } = event;
-              console.log("value: ", value);
               const index = context.passengers.findIndex(passenger => passenger.toLowerCase() === value.toLowerCase());
               context.passengers.splice(index, 1);
             })
@@ -49,6 +55,18 @@ export const BookingMachine = createMachine({
           FINISH: 'initial'
         }
       },
+    },
+
+  },
+  {
+    actions: {
+      cleanContext: assign({
+        country: "",
+        passengers: []
+      })
+    },
+    guards: {
+      moreThanOnePassenger: (context) => !!context.passengers.length
     }
   }
 )

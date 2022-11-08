@@ -107,6 +107,9 @@ select {
   color: var(--dark);
 }
 
+.text-center {
+  text-align: center;
+}
 
 /* buttons */
 .btn {
